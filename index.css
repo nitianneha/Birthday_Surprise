@@ -1,0 +1,297 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('My.jpg') center/cover no-repeat fixed;
+  color: #2c2c2c;
+  overflow-x: hidden;
+}
+
+/* =================== WELCOME SECTION =================== */
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  /* Festive gradient overlay */
+background: linear-gradient(
+    135deg,
+    rgba(5, 20, 20, 0.6),
+    rgba(22, 193, 187, 0.6)
+  );  backdrop-filter: blur(5px);
+  
+  color: #011f4f;
+  text-align: center;
+  /* animation: fadeIn 0.5s ease-out forwards; */
+}
+
+.centered h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  font-family: 'Pacifico', cursive;
+  animation: popIn 1s ease-out forwards;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.subheading {
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+/* =================== INPUT AREA =================== */
+.input-name input {
+  padding: 14px 24px;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  outline: none;
+  transition: all 0.3s ease;
+  width: 280px;
+}
+
+.input-name input:focus {
+  background: white;
+  box-shadow: 0 0 15px rgba(255, 138, 101, 0.7);
+}
+
+.input-name button {
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-name button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 8px 20px rgba(255, 87, 34, 0.4);
+}
+
+/* =================== HERO & DESCRIPTION =================== */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 30px;
+  flex-wrap: wrap;
+  background: linear-gradient(180deg, #fff8e1, #ffe0b2);
+}
+
+.desc {
+  max-width: 700px;
+  font-size: 18px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  line-height: 1.7;
+  border: 1px solid #ffe0b2;
+}
+
+/* =================== CARD SECTION =================== */
+.cards-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 60px 30px;
+  background: #fff7ec; /* Softer pastel background */
+  overflow: hidden;
+}
+
+/* Soft fade + depth overlay */
+.cards-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card {
+  perspective: 1200px;
+  height: 340px;
+  position: relative;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.card-front {
+  background: #b8e5f4;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card-back {
+  background: linear-gradient(145deg, #7366ff, #4b6cff);
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Beautiful Card Heading */
+.card h3 {
+  font-size: 1.9rem;
+  color: #1650ce;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 15px;
+  letter-spacing: 0.6px;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  transition: color 0.3s ease, transform 0.25s ease;
+}
+.card h3:hover {
+  color: #0a3fa6;
+  transform: scale(1.08);
+}
+
+/* Card Button Styling */
+.card-back button {
+  margin-top: 20px;
+  padding: 10px 28px;
+  background: white;
+  color: #290875;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s, transform 0.25s ease, box-shadow 0.3s;
+}
+.card-back button:hover {
+  background: #9db7ff;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =================== EXPAND SECTION =================== */
+.expand-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-out;
+  padding: 50px;
+  background: linear-gradient(180deg, #e3f2fd, #bbdefb);
+  margin: 60px auto;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  scroll-margin-top: 100px;
+  max-width: 1200px;
+}
+
+.expand-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.expand-section img {
+  width: 280px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.expand-section p {
+  max-width: 700px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* =================== ANIMATIONS =================== */
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* =================== MAIN PAGE BLUR BACKGROUND =================== */
+#mainPage {
+  position: relative; /* REQUIRED for ::before to align properly */
+  min-height: 100vh;
+  background: url('My.jpg') center/cover no-repeat fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+#mainPage::before {
+  content: "";
+  position: fixed; /* instead of absolute */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(5, 20, 20, 0.6),
+    rgba(22, 193, 187, 0.6)
+  );
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 0;
+}
+

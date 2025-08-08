@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap" rel="stylesheet" />
+
+  <!-- Confetti Script -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Audio -->
+  <audio id="bdaySound" src="https://www.fesliyanstudios.com/play-mp3/387" preload="auto"></audio>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <!-- Welcome Section -->
+  <div class="centered">
+    <div style="
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      background: linear-gradient(135deg, #6c7ad5, #7b6bbe);
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      font-family: 'Segoe UI', sans-serif;
+    ">
+
+      <h1 style="font-family: 'Pacifico', cursive; font-size: 3rem; color: #240676; margin-bottom: 15px;">
+        Welcome to the Birthday Surprise! 🎉
+      </h1>
+
+      <h2 style="font-size: 1.3rem; margin-bottom: 25px; font-style: italic; color: #160120;">
+        Enter your name to unlock the magic ✨
+      </h2>
+
+      <div style="margin-bottom: 25px;">
+        <input type="text" id="userName" placeholder="Enter your name"
+          style="padding: 10px; border-radius: 8px; border: none; font-size: 1rem; outline: none;" />
+        <button onclick="showMainPage()" style="padding: 10px 20px; margin-left: 10px; border: none; border-radius: 8px; 
+                       background-color: #2a43d1; color: white; font-size: 1rem; cursor: pointer;">
+          Let's Go!
+        </button>
+      </div>
+
+      <h2 style="font-size: 1.1rem; font-style: italic; color: #750505;">
+        Best Regards & Lots of Love 💖<br>
+        <strong>~ Neha</strong>
+      </h2>
+    </div>
+  </div>
+
+  <!-- Main Page -->
+  <div id="mainPage" style="display: none;">
+    <!-- Hero Section -->
+    <section style="
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      text-align: center;
+    ">
+
+      <!-- Image -->
+      <div style="flex: 1; min-width: 250px;">
+        <img src="A.jpg" alt="Cake" width="250" style="
+          border-radius: 20px;
+          box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+          transform: scale(1);
+          transition: transform 0.3s ease-in-out;
+        " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+
+      <!-- Text -->
+      <div style="
+        flex: 2; 
+        min-width: 300px; 
+        transform: scale(1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        cursor: pointer;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        background: #90d7da;
+        padding: 25px 30px;
+      " onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.2)';"
+        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)';">
+        <h2 style="
+          font-size: 2.5rem;
+          margin-bottom: 20px;
+          color: #ff3366;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          text-shadow: 1px 1px 3px rgba(255, 51, 102, 0.6);
+          transition: color 0.3s ease;
+        ">
+          Happy Birthday <span id="displayName" style="color: #bde638; font-weight: 700;"></span>💖🎉
+        </h2>
+        <p style="
+          font-size: 1.2rem;
+          line-height: 1.6;
+          color: #444;
+          background: #adeddf;
+          padding: 18px 22px;
+          border-radius: 15px;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+          font-family: 'Georgia', serif;
+        ">
+          Today isn't just another date — it's a reminder of how far you've come, how many lives you've touched, and how
+          much you still have ahead of you.
+          You bring energy, strength, and heart into everything you do. May your birthday be filled with brotherhood,
+          new dreams, good vibes, and a truckload of happiness.
+          Keep rising, keep shining, and always keep being you!
+        </p>
+      </div>
+    </section>
+
+    <!-- Cards Section -->
+
+    <!-- Expand Sections -->
+    <br><br><br>
+    <div id="family" class="expand-section" style="
+  max-width: 80%;   /* box width */
+  margin: auto;
+  padding: 20px;
+  background: linear-gradient(180deg, #e3f2fd, #bbdefb);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;   /* stack children vertically */
+  gap: 15px;                /* spacing between rows */
+  align-items: center;      /* center horizontally */
+">
+
+
+      <div style="width: 100%; text-align: center;">
+<h2 style="
+  font-size: 2.2rem;
+  margin: 0 0 10px 0;
+  color: #e63946;
+  font-weight: 800;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(230, 57, 70, 0.7);
+  border-bottom: 3px solid #e63946;
+  padding-bottom: 8px;
+  transition: color 0.3s ease;
+" 
+onmouseover="this.style.color='#f1faee'; this.style.textShadow='2px 2px 10px rgba(241, 250, 238, 0.9)';"
+onmouseout="this.style.color='#e63946'; this.style.textShadow='2px 2px 5px rgba(230, 57, 70, 0.7)';"
+>          Familissss❤️💛
+        </h2>
+      </div>
+
+      <div style="width: 100%;">
+        <p style="font-size: 1.2rem; line-height: 1.6; color: #333; margin: 0;">
+          Your family is the solid foundation on which you’ve built your dreams. Their sacrifices, love, and constant
+          support have always had your back. No matter where you go, their voices guide you and their presence gives you
+          strength. They are the ones who cheer the loudest for your victories and stand closest during the storms.
+        </p>
+      </div>
+
+      <div style="width: 100%; max-height: 900px; overflow: hidden;">
+        <img src="Fmly.jpg" alt="Family" style="width: 100%; border-radius: 20px; object-fit: cover; height: 100%;">
+      </div>
+    </div>
+
+    <br><br><br>
+    <div id="friends" class="expand-section" style="
+  max-width: 80%;   /* box width */
+  margin: auto;
+  padding: 20px;
+  background: linear-gradient(180deg, #e3f2fd, #bbdefb);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;   /* stack children vertically */
+  gap: 15px;                /* spacing between rows */
+  align-items: center;      /* center horizontally */
+">
+
+
+      <div style="width: 100%; text-align: center;">
+<h2 style="
+  font-size: 2.2rem;
+  margin: 0 0 10px 0;
+  color: #e63946;
+  font-weight: 800;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(230, 57, 70, 0.7);
+  border-bottom: 3px solid #e63946;
+  padding-bottom: 8px;
+  transition: color 0.3s ease;
+" 
+onmouseover="this.style.color='#f1faee'; this.style.textShadow='2px 2px 10px rgba(241, 250, 238, 0.9)';"
+onmouseout="this.style.color='#e63946'; this.style.textShadow='2px 2px 5px rgba(230, 57, 70, 0.7)';"
+>          Friendssss❤️💛
+        </h2>
+      </div>
+
+      <div style="width: 100%;">
+        <p style="font-size: 1.2rem; line-height: 1.6; color: #333; margin: 0;">
+          Friends are the family you choose — the ones who celebrate your weirdness, match your madness, and make
+          memories out of chaos. They’ve been your wingmen, your secret keepers, and your late-night motivators. Through
+          every adventure and setback, they’ve added meaning to your story in ways words can’t explain.
+        </p>
+      </div>
+
+      <div style="width: 100%; max-height: 1300px; overflow: hidden;">
+        <img src="F.jpg" alt="Family" style="width: 100%; border-radius: 20px; object-fit: cover; height: 100%;">
+      </div>
+    </div>
+
+    <br><br><br>
+    <div id="my" class="expand-section" style="
+  max-width: 80%;   /* box width */
+  margin: auto;
+  padding: 20px;
+  background: linear-gradient(180deg, #e3f2fd, #bbdefb);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;   /* stack children vertically */
+  gap: 15px;                /* spacing between rows */
+  align-items: center;      /* center horizontally */
+">
+
+
+      <div style="width: 100%; text-align: center;">
+<h2 style="
+  font-size: 2.2rem;
+  margin: 0 0 10px 0;
+  color: #e63946;
+  font-weight: 800;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(230, 57, 70, 0.7);
+  border-bottom: 3px solid #e63946;
+  padding-bottom: 8px;
+  transition: color 0.3s ease;
+" 
+onmouseover="this.style.color='#f1faee'; this.style.textShadow='2px 2px 10px rgba(241, 250, 238, 0.9)';"
+onmouseout="this.style.color='#e63946'; this.style.textShadow='2px 2px 5px rgba(230, 57, 70, 0.7)';"
+>          B'day Boiiii❤️💛
+        </h2>
+      </div>
+
+      <div style="width: 100%;">
+        <p style="font-size: 1.2rem; line-height: 1.6; color: #333; margin: 0;">
+          Happy Birthday to my ❤️🎉 You’re the one I can laugh with, cry with, and share every crazy moment with. Life
+          is brighter, funnier, and way more beautiful because of you. Here’s to another year of adventures, late-night
+          talks, and memories we’ll never forget.💖
+        </p>
+      </div>
+
+      <div style="width: 100%; max-height: 1300px; overflow: hidden;">
+        <img src="My.jpg" alt="Family" style="width: 100%; border-radius: 20px; object-fit: cover; height: 100%;">
+      </div>
+    </div>
+
+    <!-- Repeat the same structure for friend and my -->
+
+    <!-- JS -->
+    <script src="index.js"></script>
+</body>
+
+</html>
